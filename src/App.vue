@@ -1,5 +1,5 @@
 <template>
-  <Button label="NEXT" @click="clickNext" />
+  <Button label="NEXT" @onClick="clickNext" />
 </template>
 
 <script>
@@ -13,7 +13,7 @@ export default {
 
   setup() {
     const clickNext = () => {
-      alert("teste");
+      alert("click");
     };
     return { clickNext };
   },

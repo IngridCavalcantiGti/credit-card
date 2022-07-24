@@ -18,11 +18,11 @@ export default {
   cursor: pointer;
   border: 1px solid #07b6ad;
   border-radius: 2px;
-  width: 28rem;
-  height: 4rem;
+  width: 18rem;
+  height: 3rem;
 }
 .label {
-  font-size: 2rem;
+  font-size: 1.5rem;
   display: flex;
   align-content: center;
   justify-content: center;

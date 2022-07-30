@@ -11,23 +11,13 @@
         @input="updateInput($event.target.value)"
         :size="size"
       />
-      <!-- <the-mask
-        mask="#XSAa"
-        value="12TgB"
-        type="text"
-        masked="true"
-        placeholder="test your mask here"
-      ></the-mask> -->
       <i class="bi bi-info-circle position-absolute" v-if="icon"></i>
     </div>
   </label>
 </template>
 
 <script>
-// import { TheMask } from "vue-the-mask";
-// import { computed } from "vue";
 export default {
-  // components: { TheMask },
   name: "Input",
   props: {
     label: {
@@ -49,26 +39,10 @@ export default {
       emit("input", value);
     };
 
-    // const sizeInput = computed(() => (props.sizeLg ? "40" : "null"));
-
     return {
       updateInput,
-      // sizeInput,
     };
   },
-  //   computed: {
-  //     name() {
-  //       return this.label.toLowerCase();
-  //     },
-  //     model: {
-  //       get() {
-  //         return this.value;
-  //       },
-  //       set(value) {
-  //         this.$emit('input', value);
-  //       },
-  //     },
-  //   },
 };
 </script>
 <style scoped>
@@ -82,13 +56,11 @@ export default {
 }
 .label {
   color: gray;
+  font-size: 0.8rem;
 }
 
 .input:focus-visible {
   border-bottom: rgb(39, 16, 122) solid 1px;
   outline: none;
-}
-.sizeLg {
-  background: red;
 }
 </style>

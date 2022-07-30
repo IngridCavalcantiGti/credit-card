@@ -1,17 +1,26 @@
 <template>
-  <Button label="NEXT" @onClick="clickNext" />
   <Input label="Card Number" @input="InputValue" icon size="40" />
+  <Button label="NEXT" @onClick="clickNext" />
+  <Card
+    :numberCard="1234567898751234"
+    :validity="1522"
+    :name="'INGRID'"
+    :cvc="200"
+  >
+  </Card>
 </template>
 
 <script>
 import Button from "./components/Button.vue";
 import Input from "./components/Input.vue";
+import Card from "./components/Card.vue";
 
 export default {
   name: "App",
   components: {
     Button,
     Input,
+    Card,
   },
 
   setup() {

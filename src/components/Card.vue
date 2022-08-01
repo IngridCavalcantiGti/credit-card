@@ -4,10 +4,12 @@
       <span class="ms-4 mt-3">
         <img alt="chip" src="@/assets/chip.png" class="chip" />
       </span>
-      <span class="mt-3 me-4">{{ brand }} brand</span>
+      <span class="mt-3 me-4">
+        <img alt="chip" src="@/assets/Mastercard.png" class="chip" />
+      </span>
     </div>
     <div class="">
-      <span class="d-flex justify-content-center mt-4"> {{ numberCard }}</span>
+      <span class="d-flex justify-content-center mt-4"> {{ cardNumber }}</span>
       <div class="mt-4">
         <div class="d-flex justify-content-between">
           <span class="cvc ms-4"> cvc </span>
@@ -28,11 +30,11 @@
 <script>
 export default {
   props: {
-    numberCard: { type: Number },
-    expiryDate: { type: Number },
+    cardNumber: { type: String },
+    expiryDate: { type: String },
     brand: { type: Image },
     name: { type: String },
-    cvc: { type: Number },
+    cvc: { type: String },
   },
 };
 </script>
@@ -44,11 +46,12 @@ export default {
   height: 12rem;
   border: none;
   border-radius: 10px;
-  background-color: rgb(88, 122, 235);
+  background-color: #820ad1;
 }
 .cvc,
 .valid {
   font-size: 0.7rem;
+  color: rgb(168, 164, 164);
 }
 .chip {
   width: 2.4rem;

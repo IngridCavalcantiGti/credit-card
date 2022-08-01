@@ -7,11 +7,15 @@
       <input
         class="input"
         type="text"
-        :value="value"
         @input="updateInput($event.target.value)"
         :size="size"
+        :value="value"
       />
-      <i class="bi bi-info-circle position-absolute" v-if="icon"></i>
+      <i
+        class="bi bi-info-circle position-absolute"
+        v-if="icon"
+        :title="title"
+      ></i>
     </div>
   </label>
 </template>
@@ -22,7 +26,6 @@ export default {
   props: {
     label: {
       type: String,
-      required: true,
     },
     icon: {
       type: Boolean,
@@ -32,11 +35,17 @@ export default {
       type: String,
       default: "20",
     },
+    value: {
+      type: String,
+    },
+    title: {
+      type: String,
+    },
   },
 
   setup(props, { emit }) {
     const updateInput = (value) => {
-      emit("input", value);
+      emit("onInput", value);
     };
 
     return {
@@ -53,6 +62,7 @@ export default {
   border-left: none;
   background: transparent;
   border-bottom: rgb(106, 80, 199) solid 2px;
+  color: white;
 }
 .label {
   color: rgb(168, 164, 164);
@@ -62,5 +72,8 @@ export default {
 .input:focus-visible {
   border-bottom: rgb(106, 80, 199) solid 2px;
   outline: none;
+}
+.bi-info-circle {
+  color: rgb(118, 118, 118);
 }
 </style>

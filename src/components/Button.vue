@@ -14,9 +14,9 @@ export default {
 
 <style scoped>
 .button {
-  background: #07b6ad;
+  background: #820ad1;
   cursor: pointer;
-  border: 1px solid #07b6ad;
+  border: 1px solid #820ad1;
   border-radius: 2px;
   width: 18rem;
   height: 3rem;

@@ -1,5 +1,5 @@
 <template>
-  <div class="card ms-5 text-white">
+  <div class="card text-white">
     <div class="d-flex justify-content-between">
       <span class="ms-4 mt-3">
         <img alt="chip" src="@/assets/chip.png" class="chip" />
@@ -11,15 +11,15 @@
       <div class="mt-4">
         <div class="d-flex justify-content-between">
           <span class="cvc ms-4"> cvc </span>
-          <span class="valid me-4"> valid </span>
+          <span class="valid me-4"> Expiry Date </span>
         </div>
         <div class="d-flex justify-content-between">
           <span class="ms-4">{{ cvc }}</span>
-          <span class="me-4">{{ validity }}</span>
+          <span class="me-4">{{ expiryDate }}</span>
         </div>
       </div>
     </div>
-    <div>
+    <div class="d-flex justify-content-center">
       {{ name }}
     </div>
   </div>
@@ -29,7 +29,7 @@
 export default {
   props: {
     numberCard: { type: Number },
-    validity: { type: Number },
+    expiryDate: { type: Number },
     brand: { type: Image },
     name: { type: String },
     cvc: { type: Number },

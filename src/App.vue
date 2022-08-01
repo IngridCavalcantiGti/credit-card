@@ -1,13 +1,51 @@
 <template>
-  <Input label="Card Number" @input="InputValue" icon size="40" />
-  <Button label="NEXT" @onClick="clickNext" />
-  <Card
-    :numberCard="1234567898751234"
-    :validity="1522"
-    :name="'INGRID'"
-    :cvc="200"
-  >
-  </Card>
+  <div class="container">
+    <div class="row justify-content-center mt-5">
+      <div class="col-6">
+        <div class="d-flex justify-content-center">
+          <Card
+            :numberCard="1234567898751234"
+            :expiryDate="1522"
+            :name="'INGRID'"
+            :cvc="200"
+          >
+          </Card>
+        </div>
+
+        <div class="d-flex justify-content-center">
+          <Input
+            label="Card Number"
+            @input="InputValue"
+            size="50"
+            class="mt-5"
+          />
+        </div>
+
+        <div class="d-flex justify-content-center mt-5">
+          <Input label="CVC" @input="InputValue" size="20" icon />
+          <Input
+            label="Expiry date"
+            @input="InputValue"
+            size="20"
+            icon
+            class="ms-5"
+          />
+        </div>
+
+        <div class="d-flex justify-content-center">
+          <Input
+            label="Name on Card"
+            @input="InputValue"
+            size="50"
+            class="mt-5"
+          />
+        </div>
+        <div class="d-flex justify-content-center">
+          <Button label="NEXT" @onClick="clickNext" class="mt-5" />
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -34,17 +72,3 @@ export default {
   },
 };
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-/* body {
-  background-color: black !important;
-} */
-</style>

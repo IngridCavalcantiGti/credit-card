@@ -52,15 +52,15 @@ export default {
   border-right: none;
   border-left: none;
   background: transparent;
-  border-bottom: rgb(39, 16, 122) solid 1px;
+  border-bottom: rgb(106, 80, 199) solid 2px;
 }
 .label {
-  color: gray;
+  color: rgb(168, 164, 164);
   font-size: 0.8rem;
 }
 
 .input:focus-visible {
-  border-bottom: rgb(39, 16, 122) solid 1px;
+  border-bottom: rgb(106, 80, 199) solid 2px;
   outline: none;
 }
 </style>

@@ -1,28 +1,37 @@
 <template>
-  <div class="card text-white">
-    <div class="d-flex justify-content-between">
-      <span class="ms-4 mt-3">
-        <img alt="chip" src="@/assets/chip.png" class="chip" />
-      </span>
-      <span class="mt-3 me-4">
-        <img alt="chip" src="@/assets/Mastercard.png" class="chip" />
-      </span>
-    </div>
-    <div class="">
-      <span class="d-flex justify-content-center mt-4"> {{ cardNumber }}</span>
-      <div class="mt-4">
+  <div class="card">
+    <div class="card-container">
+      <div class="card-front">
         <div class="d-flex justify-content-between">
-          <span class="cvc ms-4"> cvc </span>
-          <span class="valid me-4"> Expiry Date </span>
+          <span class="ms-4 mt-3">
+            <img alt="chip" src="@/assets/chip.png" class="chip" />
+          </span>
+          <span class="mt-3 me-4">
+            <img alt="chip" src="@/assets/Mastercard.png" class="chip" />
+          </span>
         </div>
-        <div class="d-flex justify-content-between">
-          <span class="ms-4">{{ cvc }}</span>
-          <span class="me-4">{{ expiryDate }}</span>
+        <div class="">
+          <span class="d-flex justify-content-center mt-4">
+            {{ cardNumber }}</span
+          >
+          <div class="mt-4">
+            <div class="d-flex justify-content-end">
+              <span class="valid me-4"> Expiry Date </span>
+            </div>
+            <div class="d-flex justify-content-end">
+              <span class="me-4">{{ expiryDate }}</span>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center">
+          {{ name }}
         </div>
       </div>
-    </div>
-    <div class="d-flex justify-content-center">
-      {{ name }}
+      <div class="card-back">
+        <div class="line mt-4"></div>
+        <span class="cvc ms-4 mt-3 d-block"> cvc </span>
+        <span class="ms-4">{{ cvc }}</span>
+      </div>
     </div>
   </div>
 </template>
@@ -32,7 +41,6 @@ export default {
   props: {
     cardNumber: { type: String },
     expiryDate: { type: String },
-    brand: { type: Image },
     name: { type: String },
     cvc: { type: String },
   },
@@ -42,11 +50,45 @@ export default {
 
 <style scoped>
 .card {
-  width: 22rem;
+  width: 21rem;
   height: 12rem;
   border: none;
   border-radius: 10px;
+  background-color: transparent;
+  perspective: 1000px;
+  color: rgb(207, 205, 202);
+}
+.card-container {
+  position: relative;
+  height: 100%;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+.card:hover .card-container {
+  transform: rotateY(180deg);
+}
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  backface-visibility: hidden;
+  z-index: 1;
+}
+
+.card-front {
+  border: none;
+  border-radius: 10px;
   background-color: #820ad1;
+  width: 21rem;
+  height: 12rem;
+}
+.card-back {
+  transform: rotateY(180deg);
+  background: #820ad1;
+  width: 21rem;
+  height: 12rem;
+  border: none;
+  border-radius: 10px;
 }
 .cvc,
 .valid {
@@ -56,5 +98,11 @@ export default {
 .chip {
   width: 2.4rem;
   height: 2rem;
+}
+
+.line {
+  width: 21rem;
+  height: 2.2rem;
+  background: rgb(143, 135, 135);
 }
 </style>

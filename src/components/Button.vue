@@ -28,6 +28,6 @@ export default {
   justify-content: center;
   font-family: monospace;
   font-weight: 100;
-  color: rgb(235, 229, 229);
+  color: rgb(207, 205, 202);
 }
 </style>

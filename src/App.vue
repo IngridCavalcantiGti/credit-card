@@ -19,6 +19,7 @@
             size="50"
             class="mt-5"
             :value="valueCardNumber"
+            maxlength="16"
           />
         </div>
 
@@ -30,6 +31,7 @@
             icon
             :value="valueCvc"
             title="CVC"
+            maxlength="3"
           />
           <Input
             label="Expiry date"
@@ -39,6 +41,7 @@
             class="ms-5"
             :value="valueExpiryDate"
             title="Expiry date"
+            maxlength="4"
           />
         </div>
 
@@ -49,6 +52,7 @@
             size="50"
             class="mt-5"
             :value="valueNameCard"
+            maxlength="28"
           />
         </div>
         <div class="d-flex justify-content-center">

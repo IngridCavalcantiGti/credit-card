@@ -14,7 +14,7 @@
           <span class="d-flex justify-content-center mt-4">
             {{ cardNumber }}</span
           >
-          <div class="mt-4">
+          <div class="mt-4 h-35">
             <div class="d-flex justify-content-end">
               <span class="valid me-4"> Expiry Date </span>
             </div>
@@ -104,5 +104,8 @@ export default {
   width: 21rem;
   height: 2.2rem;
   background: rgb(143, 135, 135);
+}
+.h-35 {
+  height: 3.5rem;
 }
 </style>

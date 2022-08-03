@@ -10,6 +10,7 @@
         @input="updateInput($event.target.value)"
         :size="size"
         :value="value"
+        :maxlength="maxlength"
       />
       <i
         class="bi bi-info-circle position-absolute"
@@ -39,6 +40,9 @@ export default {
       type: String,
     },
     title: {
+      type: String,
+    },
+    maxlength: {
       type: String,
     },
   },
